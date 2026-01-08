@@ -18,30 +18,46 @@
 
 ## Getting Started
 
-### 1. Update Google Sheets Data
+### 1. Import Google Sheets Template
+- For accurate date time data, set your Locale and Time zone details in File - Settings - General
+- If the following steps for Google Sheets and Apps Script does not work, create your ouwn template using the guide from [Creating a Google Sheet Template](#creating-a-google-sheet-template)
+
+#### Setup Google Sheets
+- Create a new Google Sheets file
+- Go to File - Import - Upload - Browse
+  - Upload the provided Template.xlsx excel file from this GitHub repo
+- Import location should be `Replace spreadsheet`
+  - Click on `Import data`
+
+#### Apps Script
+- Go to `Extensions - Apps Script`
+  - May need to open within browser incognito mode to work
+- Add the provided `.gs` file from this GitHub repo
+
+### 2. Update Google Sheets Data
 - Fill in the following data fields as datetime format in Google Sheets:
   - Calendar Sync - Start Shift
   - Calendar Sync - End Shift
   - Calendar Sync - Start Break
   - Calendar Sync - End Break
 
-### 2. Update Apps Script Data
+### 3. Update Apps Script Data
 - Add the range data of `Calendar Sync` to the `DATE_RANGE` variable within Apps Script
     - eg. `const DATE_RANGE = "Q3:T40";`
 - Update the `CALENDAR_ID` for Apps Script
     - Get calendar ID from Google Calendar (Settings - Settings for my calendars - `Your calendar` - Integrate calendar)
 
-### 3. Sync Calendar to Google Sheets
+### 4. Sync Calendar to Google Sheets
 - Go to `Sync to Calendar - Add Events to Calendar`
 - May need to give permissions for google sheets to access google calendar.
 
-### 4. Add notification to events in Google Calendar
+### 5. Add notification to events in Google Calendar
 - You will only need to do this once
 - Go to Settings for your Calendar Profile
 - Add `Event notification` to (eg. 15 minutes) before event start
 - Remove `All-day event notifications`
 
-### 5. Phone notification setup for Google Calendar
+### 6. Phone notification setup for Google Calendar
 - You will only need to do this once
 - Go to Settings - `Your Schedule` and enable the `Enable Sync` option
 - Make sure `Default notifications` is set to `15 minutes before` and `All-day Events` has no notifications
@@ -52,7 +68,7 @@
 ### 1. Add script to Google Sheet
 - Go to `Extensions - Apps Script`
   - May need to open within browser incognito mode to work
-- Add the provided `.gs` file
+- Add the provided `.gs` file from this GitHub repo
 
 ### 2. Add custom named functions
 - Go to `Data - Named Functions`
